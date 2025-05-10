@@ -22,7 +22,7 @@ const Header=()=>{
           >
             
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home" >New &Featured</Nav.Link>
-            <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Women</Nav.Link>
+            <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="Women">Women</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Men</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Kids</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Limited Edition</Nav.Link>
@@ -43,7 +43,7 @@ const Header=()=>{
           <Nav.Link style={{paddingRight:"3%" ,fontWeight:"bolder", color:"black"}} href="#" disabled>
               Singin
             </Nav.Link>
-            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}href="#" disabled>
+            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="myCart">
               op2
             </Nav.Link>
             <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}href="#" disabled>

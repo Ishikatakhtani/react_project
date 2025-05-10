@@ -1,3 +1,9 @@
+//react icon 
+import { FaShippingFast } from "react-icons/fa";
+import { RiRefundFill } from "react-icons/ri";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { IoLogoInstagram } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa";
 const Home=()=>{
     return(
         <>
@@ -74,6 +80,57 @@ const Home=()=>{
     <button id="b6">Shop now</button>
     <img src="https://www.converse.in/media/wysiwyg/acc.jpg?auto=webp&format=webp&quality=70" alt="" height={"600px"}/>
     <button id="b7">Shop now</button>
+</div>
+<div >
+    <h2 id="p1"> <b>From our Community </b> </h2>
+    <div id="h3">
+<div>
+    <img src="https://www.converse.in/media/wysiwyg/ugc2-04.png?auto=webp&format=webp&quality=70" alt="" />
+   
+    <img src="https://www.converse.in/media/wysiwyg/ugc2-05.png?auto=webp&format=webp&quality=70" alt="" />
+
+</div>
+<div>  
+    <img src="https://www.converse.in/media/wysiwyg/ugc2-06.png?auto=webp&format=webp&quality=70" alt="" />
+     <button id="b8">Shop now</button>
+    </div>
+</div>
+</div>
+<div id="h2">
+   <div id="d3">
+    <div id="d1">
+    <FaShippingFast />  </div>
+  <p id="d2">  Fast, Free Shipping  </p> 
+    <p>  
+Sign up for Converse.in account and get free shipping on <br /> every order
+<br />
+<a href="" id="a">
+Learn More</a>
+</p>
+     </div>
+    <div id="d3">
+        <div id="d1"> 
+    <RiRefundFill />
+    </div>
+  <p id="d2">  Worry-Free Returns  </p>
+  <p>
+Not happy? Return your purchase for free within 7 days.
+ <br />
+<br />
+<a href="" id="a">
+Learn More</a>
+</p>
+     </div>
+     <div id="d3">
+        <div id="d1">
+    <FaSquareXTwitter />
+    <IoLogoInstagram />
+    <FaFacebook />
+    </div>
+   <p id="d2"> Follow Us </p> 
+Keep up with the latest Converse news on our social channels.
+
+     </div>
 </div>
         </>
     )
