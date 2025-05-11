@@ -7,11 +7,11 @@ import Button from 'react-bootstrap/Button';
 import { addToCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { MdOutlineHorizontalRule } from "react-icons/md";
-const Women=()=>{
+const Men=()=>{
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
    const loadData=async()=>{
-    let api="http://localhost:3000/shooes?gender=Female";
+    let api="http://localhost:3000/shooes?gender=male";
     const response = await axios.get(api);
     setMydata(response.data)
    }
@@ -109,26 +109,13 @@ useEffect(()=>{
 
   return (
     <>
-      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Women's Collection</h2>
+      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Men's Collection</h2>
       <div id="mwomen">
          <div style={{paddingLeft:"2%" , paddingRight:"3%"}}>
        <h2 >Gender</h2>
   <p style={{fontSize:"18px"}}> <input type="checkbox"/>  Male</p>
 <p style={{fontSize:"18px"}}> <input type="checkbox"/>  Female</p>
-{/* <table border="1" cellspacing="50"   >
-  <tr >
-  <td> Low Top</td> 
-   <td>High Top</td>
-  </tr>
-  <tr>
-    <td>Mid Top</td>
-     <td>Platform</td>
-  </tr>
-  <tr>
-     <td>Slip on</td>
-      <td>Boot</td>
-  </tr>
-</table> */}
+
 <div class="shoe-style-container">
   <div class="title">Shoe Style</div>
   <div class="grid">
@@ -165,4 +152,4 @@ useEffect(()=>{
 };
    
 
-export default Women;
+export default Men;

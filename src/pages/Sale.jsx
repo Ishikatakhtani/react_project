@@ -7,11 +7,11 @@ import Button from 'react-bootstrap/Button';
 import { addToCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { MdOutlineHorizontalRule } from "react-icons/md";
-const Women=()=>{
+const Sale=()=>{
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
    const loadData=async()=>{
-    let api="http://localhost:3000/shooes?gender=Female";
+    let api="http://localhost:3000/shooes?gender=limited";
     const response = await axios.get(api);
     setMydata(response.data)
    }
@@ -165,4 +165,4 @@ useEffect(()=>{
 };
    
 
-export default Women;
+export default Sale;

@@ -23,10 +23,10 @@ const Header=()=>{
             
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home" >New &Featured</Nav.Link>
             <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="Women">Women</Nav.Link>
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Men</Nav.Link>
+            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Men">Men</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Kids</Nav.Link>
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Limited Edition</Nav.Link>
-            <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Home">Sale </Nav.Link>
+            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Limitededition">Limited Edition</Nav.Link>
+            <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Sale">Sale </Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
