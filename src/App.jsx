@@ -8,6 +8,10 @@ import Limitededition from "./pages/Limitededition";
 import Sale from "./pages/Sale";
 import Search from "./pages/Search";
 import HighTop from "./pages/HighTop";
+import LowTop from "./pages/LowTop";
+import MidTop from "./pages/MidTop";
+import Platform from "./pages/Platform";
+import SlipOn from "./pages/SlipOn";
 const App=()=>{
     return(
     
@@ -23,6 +27,10 @@ const App=()=>{
       <Route path="sale" element={<Sale/>} />
       <Route path="Search" element={<Search/>} />
       <Route path="HighTop" element={<HighTop/>} />
+      <Route path="MidTop" element={<MidTop/>} />
+      <Route path="Platform" element={<Platform/>} />
+      <Route path="SlipOn" element={<SlipOn/>} />
+      <Route path="LowTop" element={<LowTop/>} />
       </Route>
       
       </Routes>
