@@ -27,16 +27,8 @@ const Header=()=>{
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Kids</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Limitededition">Limited Edition</Nav.Link>
             <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Sale">Sale </Nav.Link>
-            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
+           <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Search">Search </Nav.Link>
+          
             
             
           </Nav>
@@ -55,7 +47,7 @@ const Header=()=>{
             
           <Form  className="d-flex">
           
-            <Form.Control
+            {/* <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
@@ -64,7 +56,7 @@ const Header=()=>{
                
               }}
               
-            />
+            /> */}
           
             {/* <Button variant="outline-success">Search</Button> */}
            

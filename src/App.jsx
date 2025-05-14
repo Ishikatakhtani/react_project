@@ -6,6 +6,8 @@ import MyCart from "./pages/myCart";
 import Men from "./pages/Men";
 import Limitededition from "./pages/Limitededition";
 import Sale from "./pages/Sale";
+import Search from "./pages/Search";
+import HighTop from "./pages/HighTop";
 const App=()=>{
     return(
     
@@ -19,7 +21,8 @@ const App=()=>{
       <Route path="men" element={<Men/>} />
       <Route path="limitededition" element={<Limitededition/>} />
       <Route path="sale" element={<Sale/>} />
-      
+      <Route path="Search" element={<Search/>} />
+      <Route path="HighTop" element={<HighTop/>} />
       </Route>
       
       </Routes>
