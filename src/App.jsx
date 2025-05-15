@@ -13,6 +13,7 @@ import MidTop from "./pages/MidTop";
 import Platform from "./pages/Platform";
 import SlipOn from "./pages/SlipOn";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App=()=>{
     return(
@@ -35,6 +36,7 @@ const App=()=>{
       <Route path="LowTop" element={<LowTop/>} />
       <Route path="LowTop" element={<LowTop/>} />
       <Route path="Login" element={<Login/>} />
+      <Route path="Signup" element={<Signup/>} />
       </Route>
       
       </Routes>

@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/users"); // Fetch users from db.json
+      const response = await fetch("http://localhost:3000/user"); // Fetch users from db.json
       const users = await response.json();
 
       const user = users.find(
