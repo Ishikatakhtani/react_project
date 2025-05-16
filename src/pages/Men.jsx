@@ -25,7 +25,7 @@ useEffect(()=>{
 
  
  const ans = data.map((key) => {
-    // const isWishlisted = wishlist.some((item) => item.id === key.id);
+     const isWishlisted = wishlist.some((item) => item.id === key.id);
 
     return (
       <>
@@ -57,7 +57,7 @@ useEffect(()=>{
             {key.discount}
             <h6> Price: {key.price}</h6>
           </Card.Text>
-          {/* <Button
+          <Button
             variant="outline-none"
             style={{
               background: "transparent",
@@ -86,7 +86,7 @@ useEffect(()=>{
               <FaRegHeart color="black" />
             )}
           </Button>
-          <Button
+          {/* <Button
             variant="primary"
             onClick={() => {
               dispatch(

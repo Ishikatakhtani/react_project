@@ -14,6 +14,7 @@ import Platform from "./pages/Platform";
 import SlipOn from "./pages/SlipOn";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Wishlist from "./pages/Wishlist.";
 
 const App=()=>{
     return(
@@ -37,6 +38,7 @@ const App=()=>{
       <Route path="LowTop" element={<LowTop/>} />
       <Route path="Login" element={<Login/>} />
       <Route path="Signup" element={<Signup/>} />
+      <Route path="Wishlist" element={<Wishlist/>} />
       </Route>
       
       </Routes>

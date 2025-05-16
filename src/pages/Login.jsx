@@ -28,7 +28,7 @@ const Login = () => {
 
       if (user) {
         dispatch(login(user)); // Store full user data in Redux
-        navigate("/"); // Redirect to home page
+        navigate("/Home.jsx"); 
       } else {
         setError("Invalid email or password!");
       }
