@@ -6,12 +6,15 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { addToCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
-import { MdOutlineHorizontalRule } from "react-icons/md";
+import { useSelector } from 'react-redux';
+import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
 const Limitededition=()=>{
    const navigate= useNavigate();
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
+const wishlist = useSelector((state) => state.wishlist.items);
    const loadData=async()=>{
     let api="http://localhost:3000/shooes?gender=limited";
     const response = await axios.get(api);
@@ -23,88 +26,72 @@ useEffect(()=>{
 }, []);
 
  const ans = data.map((key) => {
-    // const isWishlisted = wishlist.some((item) => item.id === key.id);
+    const isWishlisted = wishlist.some((item) => item.id === key.id);
 
     return (
       <>
      
-      <Card style={{ width: "20rem", marginTop: "20px"}} key={key.id}>
-        <div className="image-container">
-        <Card.Img
-          variant="top"
-          src={key.image}
-          style={{ height: "300px" }}
-          onClick={() => {
-            navigate(`/prodetail/${key.id}`);
-          }}
-          
-        />
-         {/* <button >
-      
-       Add to Cart
+     <Card style={{ width: "20rem", marginTop: "20px" }} key={key.id}>
+  <div className="image-container">
+    <Card.Img
+      variant="top"
+      src={key.image}
+      style={{ height: "300px" }}
+      onClick={() => {
+        navigate(`/prodetail/${key.id}`);
+      }}
+    />
 
-    </button> */}
-     <Button className="add-to-cart-btn"  variant="primary"  onClick={()=>{dispatch(addToCart({id:key.id,  name:key.description, category:key.category,  image:key.image,  price:key.price,qnty:1}))}}> <FaCartArrowDown />  Add to Cart</Button>
-        </div>
-        <Card.Body>
-          <Card.Title>{key.name}</Card.Title>
-          <Card.Text>
-            {key.description} <br />
-            {key.category}
-            <br />
-            {key.discount}
-            <h6> Price: {key.price}</h6>
-          </Card.Text>
-          {/* <Button
-            variant="outline-none"
-            style={{
-              background: "transparent",
-              border: "none",
-              fontSize: "24px",
-            }}
-            onClick={() => {
-              if (isWishlisted) {
-                dispatch(removeFromWishlist(key.id));
-              } else {
-                dispatch(
-                  addToWishlist({
-                    id: key.id,
-                    name: key.name,
-                    desc: key.description,
-                    price: key.price,
-                    image: key.image,
-                  })
-                );
-              }
-            }}
-          >
-            {isWishlisted ? (
-              <FaHeart color="red" />
-            ) : (
-              <FaRegHeart color="black" />
-            )}
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              dispatch(
-                addtoCart({
-                  id: key.id,
-                  name: key.name,
-                  desc: key.description,
-                  category: key.category,
-                  price: key.price,
-                  image: key.image,
-                  qnty: 1,
-                })
-              );
-            }}
-          >
-            Add to Cart
-          </Button> */}
-        </Card.Body>
-      </Card>
-      
+    <Button
+      className="add-to-cart-btn"
+      variant="primary"
+      onClick={() =>
+        dispatch(addToCart({
+          id: key.id,
+          name: key.description,
+          category: key.category,
+          image: key.image,
+          price: key.price,
+          qnty: 1
+        }))
+      }
+    >
+      <FaCartArrowDown /> Add to Cart
+    </Button>
+
+    <p
+      className="add-to-btn"
+      onClick={() => {
+        if (isWishlisted) {
+          dispatch(removeFromWishlist(key.id));
+        } else {
+          dispatch(addToWishlist({
+            id: key.id,
+            desc: key.description,
+            price: key.price,
+            image: key.image,
+            gender: key.gender,
+            category: key.category
+          }));
+        }
+      }}
+    >
+      {isWishlisted ? <FaHeart color="red" /> : <FaRegHeart color="black" />}
+    </p>
+  </div>
+
+  <Card.Body>
+    <Card.Title>{key.name}</Card.Title>
+    <Card.Text>
+      {key.description} <br />
+      {key.category}
+      <br />
+      {key.discount}
+      <h6> Price: {key.price}</h6>
+    </Card.Text>
+  </Card.Body>
+</Card>
+
       </>
     );
   });

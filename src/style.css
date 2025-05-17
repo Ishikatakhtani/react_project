@@ -344,3 +344,24 @@ left: 50%;
   color: #000;
   text-decoration: underline;
 }
+
+/* wishlist */
+.image-container {
+  position: relative;
+}
+
+.add-to-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .add-to-btn {
+  opacity: 1;
+}

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromWishlist } from "../wishlistSlice";
+import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";

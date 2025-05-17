@@ -41,7 +41,7 @@ const MyCart =()=>{
     return(
         <>
            <h1> My Cart Products</h1> 
-           <h2 align="center"><FaIndianRupeeSign />  : {TotAmount}</h2> 
+           <h2 align="center"><FaIndianRupeeSign />  : {TotAmount}</h2>  
            <hr />
            <Table striped bordered hover>
       <thead>
