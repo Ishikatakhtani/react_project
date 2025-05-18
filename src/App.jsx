@@ -6,7 +6,7 @@ import MyCart from "./pages/myCart";
 import Men from "./pages/Men";
 import Limitededition from "./pages/Limitededition";
 import Sale from "./pages/Sale";
-import Search from "./pages/Search";
+
 import HighTop from "./pages/HighTop";
 import LowTop from "./pages/LowTop";
 import MidTop from "./pages/MidTop";
@@ -15,7 +15,7 @@ import SlipOn from "./pages/SlipOn";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Wishlist from "./pages/Wishlist.";
-
+import Search from "./pages/Search";
 const App=()=>{
     return(
     
@@ -29,7 +29,7 @@ const App=()=>{
       <Route path="men" element={<Men/>} />
       <Route path="limitededition" element={<Limitededition/>} />
       <Route path="sale" element={<Sale/>} />
-      <Route path="Search" element={<Search/>} />
+     
       <Route path="HighTop" element={<HighTop/>} />
       <Route path="MidTop" element={<MidTop/>} />
       <Route path="Platform" element={<Platform/>} />
@@ -39,6 +39,7 @@ const App=()=>{
       <Route path="Login" element={<Login/>} />
       <Route path="Signup" element={<Signup/>} />
       <Route path="Wishlist" element={<Wishlist/>} />
+      <Route path="search" element={<Search/>} />
       </Route>
       
       </Routes>

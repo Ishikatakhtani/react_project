@@ -365,3 +365,12 @@ left: 50%;
 .image-container:hover .add-to-btn {
   opacity: 1;
 }
+
+#womes{
+    /* display: flex;
+    flex-direction: row; */
+     display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1%;
+
+}

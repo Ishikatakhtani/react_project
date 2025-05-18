@@ -27,9 +27,7 @@ const Header=()=>{
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Kids</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Limitededition">Limited Edition</Nav.Link>
             <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Sale">Sale </Nav.Link>
-           <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Search">Search </Nav.Link>
-          
-            
+           
             
           </Nav>
           <Nav.Link style={{paddingRight:"3%" ,fontWeight:"bolder", color:"black"}} as={Link} to="Wishlist">
@@ -41,9 +39,9 @@ const Header=()=>{
             <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="Login">
               Login
             </Nav.Link>
-            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}href="#" disabled>
-              op2
-            </Nav.Link>
+            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="search">
+              Search</Nav.Link>
+            
             
           <Form  className="d-flex">
           
@@ -57,8 +55,8 @@ const Header=()=>{
               }}
               
             /> */}
-          
-            {/* <Button variant="outline-success">Search</Button> */}
+          {/* <Nav.Link as={Link} to="search">Search</Nav.Link>
+            <Button variant="outline-success" >Search</Button> */}
            
           </Form>
         </Navbar.Collapse>
