@@ -374,3 +374,9 @@ left: 50%;
   gap: 1%;
 
 }
+
+.link {
+  color: inherit;         /* Use the current text color */
+  text-decoration: none;  /* Remove underline */
+  cursor: pointer;        /* Show pointer on hover (optional) */
+}
