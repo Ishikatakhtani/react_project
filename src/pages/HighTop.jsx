@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { addToCart } from '../cartSlice';
+import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -47,7 +47,7 @@ useEffect(()=>{
       className="add-to-cart-btn"
       variant="primary"
       onClick={() =>
-        dispatch(addToCart({
+        dispatch(addtoCart({
           id: key.id,
           name: key.description,
           category: key.category,

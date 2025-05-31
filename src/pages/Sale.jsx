@@ -4,7 +4,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { addToCart } from '../cartSlice';
+import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { MdOutlineHorizontalRule } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -44,7 +44,7 @@ useEffect(()=>{
        Add to Cart
 
     </button> */}
-     <Button className="add-to-cart-btn"  variant="primary"  onClick={()=>{dispatch(addToCart({id:key.id,  name:key.description, category:key.category,  image:key.image,  price:key.price,qnty:1}))}}> <FaCartArrowDown />  Add to Cart</Button>
+     <Button className="add-to-cart-btn"  variant="primary"  onClick={()=>{dispatch(addtoCart({id:key.id,  name:key.description, category:key.category,  image:key.image,  price:key.price,qnty:1}))}}> <FaCartArrowDown />  Add to Cart</Button>
         </div>
         <Card.Body>
           <Card.Title>{key.name}</Card.Title>

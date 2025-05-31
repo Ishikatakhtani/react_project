@@ -4,7 +4,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { addToCart } from '../cartSlice';
+import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { FaHeart } from "react-icons/fa";
@@ -46,7 +46,7 @@ useEffect(()=>{
       className="add-to-cart-btn"
       variant="primary"
       onClick={() =>
-        dispatch(addToCart({
+        dispatch(addtoCart({
           id: key.id,
           name: key.description,
           category: key.category,

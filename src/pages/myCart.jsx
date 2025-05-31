@@ -1,74 +1,98 @@
-import { useSelector, useDispatch } from "react-redux";
-import Table from 'react-bootstrap/Table';
-import { FaPlusSquare } from "react-icons/fa";
-import { FaMinusSquare } from "react-icons/fa";
-import { qtyIncr, qtyDecr, proRemove } from "../cartSlice";
-import { FaIndianRupeeSign } from "react-icons/fa6";
-const MyCart =()=>{
-    const cartData = useSelector(state=>state.mycart.cart);
-    const dispatch = useDispatch();
 
-    let TotAmount=0;
-    const ans= cartData.map((key)=>{
-       
-      TotAmount+=key.qnty*key.price;
-        return(
-            <>
-              <tr>
-                <td> 
-                    <img src={key.image} width="100" height="100" />
-                 </td>
-                <td> {key.name} </td>
-                <td> {key.category} </td>
-                <td style={{fontSize:"20px"}}> 
-                <FaMinusSquare   onClick={()=>{dispatch(qtyDecr({id:key.id}))}} style={{cursor:"pointer"}} />   
-                    {key.qnty}
-                <FaPlusSquare 
-                onClick={()=>{dispatch(qtyIncr({id:key.id}))}} style={{cursor:"pointer"}} />
-                     </td>
-                <td> {key.price} </td>
-                <td>
-                    {key.qnty * key.price}
-                    
-                </td>
-                <td>
-                  <button onClick={()=>{dispatch(proRemove({id:key.id}))}}>Remove</button>
-                </td>
-              </tr>
-            </>
-        )
-    })
-    return(
-        <>
-           <h1> My Cart Products</h1> 
-           <h2 align="center"><FaIndianRupeeSign />  : {TotAmount}</h2>  
-           <hr />
-           <Table striped bordered hover>
-      <thead>
+import { useSelector, useDispatch } from "react-redux";
+import Table from "react-bootstrap/Table";
+import { FaPlusCircle } from "react-icons/fa";
+import { FaMinusCircle } from "react-icons/fa";
+import { qntyInc, qntyDec, proDelete } from "../cartSlice";
+import { PiCurrencyInrBold } from "react-icons/pi";
+import { MdDelete } from "react-icons/md";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
+const MyCart = () => {
+  const MyCart = useSelector((state) => state.mycart.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+ let totAmount = 0;
+
+  const ans = MyCart.map((key) => {
+     totAmount += (Number(key.price) || 0) * (Number(key.qnty) || 0 );
+  const price = Number(key.price);
+  const qnty = Number(key.qnty);
+  const total = !isNaN(price) && !isNaN(qnty) ? price * qnty : 0;
+
+     return (
+      <>
         <tr>
-          <th>#</th>
-          <th>Product Name</th>
-          <th>Category</th>
-          <th> Quantity</th>
-          <th>Price</th>
-          <th> Total Price</th>
-          <th></th>
+          <td>
+            <img src={key.image} width="100" height="100" />
+          </td>
+          <td> {key.name} </td>
+          <td> {key.category} </td>
+          <td> {key.price} </td>
+          <td>
+            <FaMinusCircle
+              onClick={() => {
+                dispatch(qntyDec({ id: key.id }));
+              }}
+            />
+            {key.qnty}
+            <FaPlusCircle
+              onClick={() => {
+                dispatch(qntyInc({ id: key.id }));
+              }}
+            />
+          </td>
+         <td>{total}</td>
+
+          <td style={{ color: "red", fontSize: "25px" }}>
+            <MdDelete
+              onClick={() => {
+                dispatch(proDelete(key.id));
+              }}
+            />
+          </td>
         </tr>
-      </thead>
-      <tbody>
-          {ans}
-           <tr>
-            <td colSpan="6" style={{ textAlign: "right", fontWeight: "bold" }}>
-              Total:
-            </td>
-            <td style={{ fontWeight: "bold" }}>
-              ₹ {TotAmount}
-            </td>
-            <td></td>
+      </>
+    );
+  });
+
+  return (
+    <>
+      <h1 align="center"> My Cart</h1>
+
+      <hr />
+
+      <Table bordered hover>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity </th>
+            <th>Total</th>
+            <th>Actions</th>
           </tr>
-        </tbody>
-        </Table>
-        </>
-    )
-}
+        </thead>
+        <tbody>{ans}</tbody>
+      </Table>
+      <h5 align="right">
+        Total:
+        <PiCurrencyInrBold />
+        {totAmount}
+      </h5>
+      <h1 align="right">
+        <Button
+          variant="warning"
+          onClick={() => {
+            navigate("/checkout");
+          }}
+        >
+          Checkout
+        </Button>
+      </h1>
+    </>
+  );
+};
 export default MyCart;

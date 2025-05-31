@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { addToCart } from '../cartSlice';
+import { addtoCart } from '../cartSlice';
 import { FaCartArrowDown } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { FaHeart } from "react-icons/fa";
@@ -66,7 +66,7 @@ const handleInput=(e)=>{
       className="add-to-cart-btn"
       variant="primary"
       onClick={() =>
-        dispatch(addToCart({
+        dispatch(addtoCart({
           id: key.id,
           name: key.description,
           category: key.category,

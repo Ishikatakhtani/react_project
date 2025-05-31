@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
-import { addToCart } from "../cartSlice";
+import { addtoCart } from "../cartSlice";
 
 const Wishlist = () => {
   const wishlist = useSelector((state) => state.wishlist.items);
@@ -56,7 +56,7 @@ const Wishlist = () => {
                   variant="primary"
                   onClick={() =>
                     dispatch(
-                      addToCart({
+                     addtoCart ({
                         id: product.id,
                         name: product.name,
                         desc: product.description,
