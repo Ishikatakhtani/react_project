@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-lg-5 col-12 ft-1">
-                            <h3><span>WALEED</span>CODES</h3>
+                            <h3><span></span>CODES</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ea quo ex ullam laboriosam magni totam, facere eos iure voluptate.</p>
                             <div className="footer-icons">
                                 <i class="fa-brands fa-facebook"></i>
@@ -17,19 +17,19 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-3 col-12 ft-2">
-                            <h5>Quick Links</h5>
+                            <h5>Quick Link</h5>
                             <ul>
                                 <li className="nav-item">
-                                    <a className="" href="/">Services</a>
+                                    <a className="" href="/">Service</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="" href="/">Portfolio</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="" href="/">Contact Us</a>
+                                    <a className="" href="/">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="" href="/">Services  </a>
+                                    <a className="" href="/">Service</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="" href="/">Portfolio</a>
@@ -38,7 +38,7 @@ const Footer = () => {
                         </div>
                         <div className="col-md-6 col-lg-4 col-12 ft-3">
                             <h5>Quick  Links</h5>
-                            <p><i class="fa-solid fa-phone-volume"></i> +12345678910</p>
+                            <p><i class="fa-solid fa-phone-volume"></i>+12345678910</p>
                             <p><i class="fa-solid fa-envelope"></i> shoes@gmail.com</p>
                             <p><i class="fa-solid fa-paper-plane"></i> ABC</p>
                         </div>
