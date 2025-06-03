@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
 #home{
     text-align: center;
 }
@@ -388,7 +391,7 @@ left: 50%;
    background-size: 200% 200%;
    animation: gradient-shift 5s ease infinite;
 
-  color: white;
+  color: rgb(200, 9, 9);
   text-align: center;
   padding: 20px 0;
   height: 40%;
@@ -409,7 +412,7 @@ left: 50%;
   margin: auto;
 }
 .footer-links a, .footer-social a {
-  color: white;
+  color: gray;
   margin: 0 10px;
   text-decoration: none;
   font-size: 25px;

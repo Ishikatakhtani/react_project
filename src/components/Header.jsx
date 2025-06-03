@@ -45,18 +45,6 @@ const Header=()=>{
             
           <Form  className="d-flex">
           
-            {/* <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              style={{fontWeight:"bolder", backgroundColor:"black"
-               
-              }}
-              
-            /> */}
-          {/* <Nav.Link as={Link} to="search">Search</Nav.Link>
-            <Button variant="outline-success" >Search</Button> */}
            
           </Form>
         </Navbar.Collapse>

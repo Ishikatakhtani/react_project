@@ -10,6 +10,10 @@ import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaFacebook, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 const Men=()=>{
   const navigate= useNavigate();
 const [data, setMydata]= useState([]);
@@ -132,9 +136,32 @@ useEffect(()=>{
       </div>
       <div id="womens">
         {ans}
+        
+         <div class="footer-container">
+     <div class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+       <div class="footer-links">
+       {/* <Link to="/men">Men</Link> */}
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
+       <div class="footer-social">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+ </div>
       </div>
      
       </div>
+
     </>
   );
 };
