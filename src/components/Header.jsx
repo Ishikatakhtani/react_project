@@ -24,26 +24,26 @@ const Header=()=>{
             navbarScroll
           >
             
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home" >New &Featured</Nav.Link>
-            <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="Women">Women</Nav.Link>
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Men">Men</Nav.Link>
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Limitededition">Limited Edition</Nav.Link>
-            <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Sale">Sale </Nav.Link>
+            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="/Home" >New &Featured</Nav.Link>
+            <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="/Women">Women</Nav.Link>
+            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="/Men">Men</Nav.Link>
+            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="/Limitededition">Limited Edition</Nav.Link>
+            <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="/Sale">Sale </Nav.Link>
            
             
           </Nav>
-          <Nav.Link style={{paddingRight:"3%" ,fontWeight:"bolder", color:"black"}} as={Link} to="Wishlist">
+          <Nav.Link style={{paddingRight:"3%" ,fontWeight:"bolder", color:"black"}} as={Link} to="/Wishlist">
                 <FaHeart color="red" size={24} />
               
             </Nav.Link>
-            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="myCart">
+            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="/myCart">
                 <FaCartShopping size={24} />
 
             </Nav.Link>
-            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="Login">
+            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="/Login">
               Logout
             </Nav.Link>
-            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="search">
+            <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="/search">
               Search</Nav.Link>
             
             
