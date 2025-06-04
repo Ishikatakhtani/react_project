@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const HighTop=()=>{
     
   const navigate= useNavigate();
@@ -99,7 +100,7 @@ useEffect(()=>{
 
   return (
     <>
-      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Men's Collection</h2>
+      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse HighTop Collection</h2>
       <div id="mwomen">
          <div style={{paddingLeft:"2%" , paddingRight:"3%"}}>
        <h2 >Gender</h2>
@@ -134,9 +135,11 @@ useEffect(()=>{
       </div>
       <div id="womens">
         {ans}
-      </div>
-     
-      </div>
+         
+ </div>
+      
+     </div>
+      
     </>
   );
 };

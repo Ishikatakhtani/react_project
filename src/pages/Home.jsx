@@ -130,9 +130,27 @@ Learn More</a>
     </div>
    <p id="d2"> Follow Us </p> 
 Keep up with the latest Converse news on our social channels.
-
+ </div>
      </div>
-</div>
+        <div class="footer-contain">
+       <div  class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+       <div class="footer-links">
+       <Link to="/men">Men</Link>
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
+     
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+ </div>
+ 
+ 
+
         </>
     )
 }

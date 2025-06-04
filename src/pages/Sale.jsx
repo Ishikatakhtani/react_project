@@ -8,6 +8,7 @@ import { addtoCart } from '../cartSlice';
 import { useDispatch } from 'react-redux';
 import { MdOutlineHorizontalRule } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Sale=()=>{
   const navigate= useNavigate();
 const [data, setMydata]= useState([]);
@@ -111,7 +112,7 @@ useEffect(()=>{
 
   return (
     <>
-      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Women's Collection</h2>
+      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Sale</h2>
       <div id="mwomen">
          <div style={{paddingLeft:"2%" , paddingRight:"3%"}}>
        <h2 >Gender</h2>
@@ -144,7 +145,24 @@ useEffect(()=>{
       </div>
       <div id="womens">
         {ans}
-      </div>
+          <div class="footer-container">
+          <div class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+       <div class="footer-links">
+       <Link to="/men">Men</Link>
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
+      
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+       </div>
+ </div>
+     
      
       </div>
     </>

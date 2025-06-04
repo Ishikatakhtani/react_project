@@ -1,68 +1,238 @@
 
+// import { useSelector, useDispatch } from "react-redux";
+// import Table from "react-bootstrap/Table";
+// import { FaPlusCircle } from "react-icons/fa";
+// import { FaMinusCircle } from "react-icons/fa";
+// import { qntyInc, qntyDec, proDelete } from "../cartSlice";
+// import { PiCurrencyInrBold } from "react-icons/pi";
+// import { MdDelete } from "react-icons/md";
+// import Button from "react-bootstrap/Button";
+// import { useNavigate } from "react-router-dom";
+// // const MyCart = () => {
+// //   const MyCart = useSelector((state) => state.mycart.cart);
+// //   const dispatch = useDispatch();
+// //   const navigate = useNavigate();
+
+// //  let totAmount = 0;
+
+// //   const ans = MyCart.map((key) => {
+// //      totAmount += (Number(key.price) || 0) * (Number(key.qnty) || 0 );
+// //   const price = Number(key.price);
+// //   const qnty = Number(key.qnty);
+// //   const total = !isNaN(price) && !isNaN(qnty) ? price * qnty : 0;
+
+// //      return (
+// //       <>
+// //         <tr>
+// //           <td>
+// //             <img src={key.image} width="100" height="100" />
+// //           </td>
+// //           <td> {key.name} </td>
+// //           <td> {key.category} </td>
+// //           <td> {key.price} </td>
+// //           <td>
+// //             <FaMinusCircle
+// //               onClick={() => {
+// //                 dispatch(qntyDec({ id: key.id }));
+// //               }}
+// //             />
+// //             {key.qnty}
+// //             <FaPlusCircle
+// //               onClick={() => {
+// //                 dispatch(qntyInc({ id: key.id }));
+// //               }}
+// //             />
+// //           </td>
+// //          <td>{total}</td>
+
+// //           <td style={{ color: "red", fontSize: "25px" }}>
+// //             <MdDelete
+// //               onClick={() => {
+// //                 dispatch(proDelete(key.id));
+// //               }}
+// //             />
+// //           </td>
+// //         </tr>
+// //       </>
+// //     );
+// //   });
+
+// //   return (
+// //     <>
+// //       <h1 align="center"> My Cart</h1>
+
+// //       <hr />
+
+// //       <Table bordered hover>
+// //         <thead>
+// //           <tr>
+// //             <th>Image</th>
+// //             <th>Product Name</th>
+// //             <th>Description</th>
+// //             <th>Price</th>
+// //             <th>Quantity </th>
+// //             <th>Total</th>
+// //             <th>Actions</th>
+// //           </tr>
+// //         </thead>
+// //         <tbody>{ans}</tbody>
+// //       </Table>
+// //       <h5 align="right">
+// //         Total:
+// //         <PiCurrencyInrBold />
+// //         {totAmount}
+// //       </h5>
+// //       <h1 align="right">
+// //         <Button
+// //           variant="warning"
+// //           onClick={() => {
+// //             navigate("/checkout");
+// //           }}
+// //         >
+// //           Checkout
+// //         </Button>
+// //       </h1>
+// //     </>
+// //   );
+// // };
+// // export default MyCart;
+
+
+// const MyCart = () => {
+//   const MyCart = useSelector((state) => state.mycart.cart);
+//   const dispatch = useDispatch();
+//   const navigate = useNavigate();
+
+  
+//   const totAmount = MyCart.reduce((acc, item) => acc + item.price * item.qnty, 0);
+
+
+//   const ans = MyCart.map((key) => {
+//     const price = Number(key.price);
+//     const qnty = Number(key.qnty);
+//     const total = !isNaN(price) && !isNaN(qnty) ? price * qnty : 0;
+
+//     return (
+//       <tr key={key.id}>
+//         <td><img src={key.image} width="100" height="100" /></td>
+//         <td>{key.name}</td>
+//         <td>{key.category}</td>
+//         <td>{key.price}</td>
+//         <td>
+//           <FaMinusCircle onClick={() => dispatch(qntyDec({ id: key.id }))} />
+//           {key.qnty}
+//           <FaPlusCircle onClick={() => dispatch(qntyInc({ id: key.id }))} />
+//         </td>
+//         <td>{total}</td>
+//         <td style={{ color: "red", fontSize: "25px" }}>
+//           <MdDelete onClick={() => dispatch(proDelete(key.id))} />
+//         </td>
+//       </tr>
+//     );
+//   });
+
+//   return (
+//     <>
+//       <h1 align="center"> My Cart</h1>
+//       <hr />
+//       <Table bordered hover>
+//         <thead>
+//           <tr>
+//             <th>Image</th>
+//             <th>Product Name</th>
+//             <th>Description</th>
+//             <th>Price</th>
+//             <th>Quantity</th>
+//             <th>Total</th>
+//             <th>Actions</th>
+//           </tr>
+//         </thead>
+//         <tbody>{ans}</tbody>
+//       </Table>
+//       <h5 align="right">
+//         Total: <PiCurrencyInrBold /> {totAmount}
+//       </h5>
+//       <h1 align="right">
+//         <Button variant="warning" onClick={() => navigate("/checkout")}>
+//           Checkout
+//         </Button>
+//       </h1>
+//     </>
+//   );
+// };
+// export default MyCart;
+
+
 import { useSelector, useDispatch } from "react-redux";
 import Table from "react-bootstrap/Table";
-import { FaPlusCircle } from "react-icons/fa";
-import { FaMinusCircle } from "react-icons/fa";
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { qntyInc, qntyDec, proDelete } from "../cartSlice";
 import { PiCurrencyInrBold } from "react-icons/pi";
 import { MdDelete } from "react-icons/md";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
+
 const MyCart = () => {
   const MyCart = useSelector((state) => state.mycart.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
- let totAmount = 0;
+  // Clean and convert price string to number safely
+  const cleanPrice = (price) => {
+    if (typeof price !== "string") return Number(price) || 0;
+    return Number(price.replace(/[^0-9.]/g, "")) || 0;
+  };
+
+  // Calculate total amount by summing price * quantity after conversion
+  const totAmount = MyCart.reduce((acc, item) => {
+    const price = cleanPrice(item.price);
+    const qnty = Number(item.qnty) || 0;
+    return acc + price * qnty;
+  }, 0);
 
   const ans = MyCart.map((key) => {
-     totAmount += (Number(key.price) || 0) * (Number(key.qnty) || 0 );
-  const price = Number(key.price);
-  const qnty = Number(key.qnty);
-  const total = !isNaN(price) && !isNaN(qnty) ? price * qnty : 0;
+    const price = cleanPrice(key.price);
+    const qnty = Number(key.qnty) || 0;
+    const total = price * qnty;
 
-     return (
-      <>
-        <tr>
-          <td>
-            <img src={key.image} width="100" height="100" />
-          </td>
-          <td> {key.name} </td>
-          <td> {key.category} </td>
-          <td> {key.price} </td>
-          <td>
-            <FaMinusCircle
-              onClick={() => {
-                dispatch(qntyDec({ id: key.id }));
-              }}
-            />
-            {key.qnty}
-            <FaPlusCircle
-              onClick={() => {
-                dispatch(qntyInc({ id: key.id }));
-              }}
-            />
-          </td>
-         <td>{total}</td>
-
-          <td style={{ color: "red", fontSize: "25px" }}>
-            <MdDelete
-              onClick={() => {
-                dispatch(proDelete(key.id));
-              }}
-            />
-          </td>
-        </tr>
-      </>
+    return (
+      <tr key={key.id}>
+        <td>
+          <img src={key.image} width="100" height="100" alt={key.name} />
+        </td>
+        <td>{key.name}</td>
+        <td>{key.category}</td>
+        <td>
+          <PiCurrencyInrBold /> {price}
+        </td>
+        <td>
+          <FaMinusCircle
+            onClick={() => dispatch(qntyDec({ id: key.id }))}
+            style={{ cursor: "pointer", marginRight: "8px" }}
+          />
+          {qnty}
+          <FaPlusCircle
+            onClick={() => dispatch(qntyInc({ id: key.id }))}
+            style={{ cursor: "pointer", marginLeft: "8px" }}
+          />
+        </td>
+        <td>
+          <PiCurrencyInrBold /> {total}
+        </td>
+        <td style={{ color: "red", fontSize: "25px" }}>
+          <MdDelete
+            onClick={() => dispatch(proDelete(key.id))}
+            style={{ cursor: "pointer" }}
+          />
+        </td>
+      </tr>
     );
   });
 
   return (
     <>
-      <h1 align="center"> My Cart</h1>
-
+      <h1 align="center">My Cart</h1>
       <hr />
-
       <Table bordered hover>
         <thead>
           <tr>
@@ -70,29 +240,23 @@ const MyCart = () => {
             <th>Product Name</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Quantity </th>
+            <th>Quantity</th>
             <th>Total</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>{ans}</tbody>
       </Table>
-      <h5 align="right">
-        Total:
-        <PiCurrencyInrBold />
-        {totAmount}
+      <h5 align="right" style={{ marginRight: "20px" }}>
+        Total: <PiCurrencyInrBold /> {totAmount}
       </h5>
-      <h1 align="right">
-        <Button
-          variant="warning"
-          onClick={() => {
-            navigate("/checkout");
-          }}
-        >
+      <h1 align="right" style={{ marginRight: "20px" }}>
+        <Button variant="warning" onClick={() => navigate("/checkout")}>
           Checkout
         </Button>
       </h1>
     </>
   );
 };
+
 export default MyCart;

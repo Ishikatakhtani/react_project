@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
+import { Link } from "react-router-dom";
 const Limitededition=()=>{
    const navigate= useNavigate();
 const [data, setMydata]= useState([]);
@@ -98,7 +99,7 @@ useEffect(()=>{
 
   return (
     <>
-      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Women's Collection</h2>
+      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse LimitedEdition Collection</h2>
       <div id="mwomen">
          <div style={{paddingLeft:"2%" , paddingRight:"3%"}}>
        <h2 >Gender</h2>
@@ -132,7 +133,30 @@ useEffect(()=>{
       </div>
       <div id="womens">
         {ans}
-      </div>
+         <div class="footer-container">
+       <div  class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+        
+       <div class="footer-links">
+       <Link to="/men">Men</Link>
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
+       <div class="footer-social">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+       </div>
+ </div>
+      
      
       </div>
 

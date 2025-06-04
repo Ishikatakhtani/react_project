@@ -48,6 +48,7 @@ const App = () => {
           <Route path="LowTop" element={<LowTop />} />
           <Route path="Wishlist" element={<Wishlist />} />
           <Route path="search" element={<Search />} />
+            
         </Route>
 
         {/* Catch all unknown routes redirect to login or 404 */}

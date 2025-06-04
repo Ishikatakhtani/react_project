@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
 import { FaRegHeart } from "react-icons/fa"
+import { Link } from "react-router-dom";
 const MidTop=()=>{
   const navigate= useNavigate();
 const [data, setMydata]= useState([]);
@@ -98,7 +99,7 @@ useEffect(()=>{
 
   return (
     <>
-      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse Men's Collection</h2>
+      <h2 style={{display:"flex",justifyContent:"center",paddingTop:"3%" ,paddingBottom:"2%"}} >Converse MidTop Collection</h2>
       <div id="mwomen">
          <div style={{paddingLeft:"2%" , paddingRight:"3%"}}>
        <h2 >Gender</h2>
@@ -131,11 +132,28 @@ useEffect(()=>{
 </div>
 
       </div>
-      <div id="womens">
-        {ans}
-      </div>
+      <div id="womens"></div>
+        {ans} </div>
+{/*  
+         <div class="footer-contai">
+       <div  class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+       <div class="footer-links">
+       <Link to="/men">Men</Link>
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
      
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+ 
       </div>
+      */}
+     
     </>
   );
 };

@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
+import { Link } from "react-router-dom";
 const Women=()=>{
   const navigate= useNavigate();
 const [data, setMydata]= useState([]);
@@ -134,9 +135,25 @@ useEffect(()=>{
       </div>
       <div id="womens">
         {ans}
+        <div class="footer-container">
+       <div  class="footer-logo">
+           <h2><span>Conversa</span> Shoes</h2> 
+       </div> 
+       <div class="footer-links">
+       <Link to="/men">Men</Link>
+  <Link to="/women">Women</Link>
+   <a href="#A">About Us</a>
+   <a href="#contact">Contact</a>
+   <Link to="/">Home</Link>
+   </div>
+     
+       <div class="footer-copy">
+           <p>&copy;  All Rights Reserved.</p>
+       </div>
+ </div>
+ </div>
       </div>
      
-      </div>
     </>
   );
 };
