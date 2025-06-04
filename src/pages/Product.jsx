@@ -20,7 +20,7 @@ const Product = () => {
     const response = await axios.get(api);
     setProData(response.data);
   };
-
+const user = useSelector(state => state.auth?.user);
   useEffect(() => {
     loadData();
   }, []);

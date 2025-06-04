@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from "../wishlistSlice";
 import { FaRegHeart } from "react-icons/fa"
+import { FaHeart } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 const Platform=()=>{
   const navigate= useNavigate();
@@ -20,6 +22,7 @@ const wishlist = useSelector((state) => state.wishlist.items);
     const response = await axios.get(api);
     setMydata(response.data)
    }
+   const user = useSelector(state => state.auth?.user);
 
 useEffect(()=>{
     loadData()
@@ -44,42 +47,57 @@ useEffect(()=>{
       }}
     />
 
-    <Button
-      className="add-to-cart-btn"
-      variant="primary"
-      onClick={() =>
-        dispatch(addtoCart({
-          id: key.id,
-          name: key.description,
-          category: key.category,
-          image: key.image,
-          price: key.price,
-          qnty: 1
-        }))
-      }
-    >
-      <FaCartArrowDown /> Add to Cart
-    </Button>
+      
+<Button
+          className="add-to-cart-btn"
+          variant="primary"
+          onClick={() => {
+            if (!user) {
+              alert("Please login to add items to cart.");
+              navigate("/login");
+              return;
+            }
+            dispatch(
+              addtoCart({
+                id: key.id,
+                name: key.description,
+                category: key.category,
+                image: key.image,
+                price: key.price,
+                qnty: 1,
+              })
+            );
+          }}
+        >
+          <FaCartArrowDown /> Add to Cart
+        </Button>
 
     <p
-      className="add-to-btn"
-      onClick={() => {
-        if (isWishlisted) {
-          dispatch(removeFromWishlist(key.id));
-        } else {
-          dispatch(addToWishlist({
-            id: key.id,
-            desc: key.description,
-            price: key.price,
-            image: key.image,
-            gender: key.gender,
-            category: key.category
-          }));
-        }
-      }}
-    >
-      {isWishlisted ? <FaHeart color="red" /> : <FaRegHeart color="black" />}
-    </p>
+          className="add-to-btn"
+          onClick={() => {
+            if (!user) {
+              alert("Please login to add items to wishlist.");
+              navigate("/login");
+              return;
+            }
+            if (isWishlisted) {
+              dispatch(removeFromWishlist(key.id));
+            } else {
+              dispatch(
+                addToWishlist({
+                  id: key.id,
+                  desc: key.description,
+                  price: key.price,
+                  image: key.image,
+                  gender: key.gender,
+                  category: key.category,
+                })
+              );
+            }
+          }}
+        >
+          {isWishlisted ? <FaHeart color="red" /> : <FaRegHeart color="black" />}
+        </p>
   </div>
 
   <Card.Body>

@@ -19,6 +19,7 @@ const dispatch = useDispatch();
     setMydata(response.data)
    }
 
+   
 useEffect(()=>{
     loadData()
 }, []);
@@ -40,11 +41,7 @@ useEffect(()=>{
           }}
           
         />
-         {/* <button >
-      
-       Add to Cart
-
-    </button> */}
+        
      <Button className="add-to-cart-btn"  variant="primary"  onClick={()=>{dispatch(addtoCart({id:key.id,  name:key.description, category:key.category,  image:key.image,  price:key.price,qnty:1}))}}> <FaCartArrowDown />  Add to Cart</Button>
         </div>
         <Card.Body>
@@ -56,53 +53,7 @@ useEffect(()=>{
             {key.discount}
             <h6> Price: {key.price}</h6>
           </Card.Text>
-          {/* <Button
-            variant="outline-none"
-            style={{
-              background: "transparent",
-              border: "none",
-              fontSize: "24px",
-            }}
-            onClick={() => {
-              if (isWishlisted) {
-                dispatch(removeFromWishlist(key.id));
-              } else {
-                dispatch(
-                  addToWishlist({
-                    id: key.id,
-                    name: key.name,
-                    desc: key.description,
-                    price: key.price,
-                    image: key.image,
-                  })
-                );
-              }
-            }}
-          >
-            {isWishlisted ? (
-              <FaHeart color="red" />
-            ) : (
-              <FaRegHeart color="black" />
-            )}
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              dispatch(
-                addtoCart({
-                  id: key.id,
-                  name: key.name,
-                  desc: key.description,
-                  category: key.category,
-                  price: key.price,
-                  image: key.image,
-                  qnty: 1,
-                })
-              );
-            }}
-          >
-            Add to Cart
-          </Button> */}
+         
         </Card.Body>
       </Card>
       

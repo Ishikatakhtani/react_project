@@ -18,26 +18,23 @@ import Signup from "./pages/Signup";
 import Wishlist from "./pages/Wishlist.";
 import Search from "./pages/Search";
 
+
+
 const App = () => {
-  const user = useSelector((state) => state.auth?.user); // Safe access
+  const user = useSelector((state) => state.auth?.user);
 
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public Routes */}
+        {/* Public Auth Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* Protected Routes */}
-        <Route
-          path="/"
-          element={user ? <Layout /> : <Navigate to="/login" replace />}
-        >
-          {/* Nested routes under Layout */}
-          <Route index element={<Navigate to="home" replace />} />
+        {/* Public Layout with nested routes */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="women" element={<Women />} />
-          <Route path="mycart" element={<MyCart />} />
           <Route path="men" element={<Men />} />
           <Route path="limitededition" element={<Limitededition />} />
           <Route path="sale" element={<Sale />} />
@@ -46,13 +43,21 @@ const App = () => {
           <Route path="Platform" element={<Platform />} />
           <Route path="SlipOn" element={<SlipOn />} />
           <Route path="LowTop" element={<LowTop />} />
-          <Route path="Wishlist" element={<Wishlist />} />
           <Route path="search" element={<Search />} />
-            
+
+          {/* Protected Routes */}
+          <Route
+            path="mycart"
+            element={user ? <MyCart /> : <Navigate to="/login" replace />}
+          />
+          <Route
+            path="Wishlist"
+            element={user ? <Wishlist /> : <Navigate to="/login" replace />}
+          />
         </Route>
 
-        {/* Catch all unknown routes redirect to login or 404 */}
-        <Route path="*" element={<Navigate to={user ? "/home" : "/login"} replace />} />
+        {/* Catch-all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
