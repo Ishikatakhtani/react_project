@@ -3,8 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaCartShopping } from "react-icons/fa6";
+
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import { FaHeart } from "react-icons/fa";
 const Header=()=>{
     return(
         <>
@@ -24,20 +27,21 @@ const Header=()=>{
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home" >New &Featured</Nav.Link>
             <Nav.Link  style={{fontWeight:"bolder", color:"black"}} as={Link} to="Women">Women</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Men">Men</Nav.Link>
-            <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Home">Kids</Nav.Link>
             <Nav.Link style={{fontWeight:"bolder", color:"black"}} as={Link} to="Limitededition">Limited Edition</Nav.Link>
             <Nav.Link style={{color:"red",fontWeight:"bolder"}} as={Link} to="Sale">Sale </Nav.Link>
            
             
           </Nav>
           <Nav.Link style={{paddingRight:"3%" ,fontWeight:"bolder", color:"black"}} as={Link} to="Wishlist">
-              wishlist
+                <FaHeart color="red" size={24} />
+              
             </Nav.Link>
             <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="myCart">
-              Add to cart
+                <FaCartShopping size={24} />
+
             </Nav.Link>
             <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="Login">
-              Login
+              Logout
             </Nav.Link>
             <Nav.Link style={{paddingRight:"3%",fontWeight:"bolder", color:"black"}}as={Link} to="search">
               Search</Nav.Link>

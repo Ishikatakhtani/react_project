@@ -32,12 +32,6 @@ const handleInput=(e)=>{
       setProduct(value);
 }
 
-
-
-
-
-
-
  const ans=mydata.map((key)=>{
    const isWishlisted = wishlist.some((item) => item.id === key.id);
 
@@ -161,7 +155,7 @@ const handleInput=(e)=>{
 </div>
 
       </div>
-      <div id="womes">
+      <div id="womens">
         {ans}
       </div>
      

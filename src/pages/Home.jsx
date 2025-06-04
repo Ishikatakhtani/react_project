@@ -56,21 +56,22 @@ const Home=()=>{
 
 <div id="h2">
 <div id="h3">
-    <div>
+    <div >
         <img src="https://www.converse.in/media/wysiwyg/May_22_homepage_copy-04.jpg?auto=webp&format=webp&quality=70" alt=""    />
       <Link to="/Women">  <button id="b4">Shop now</button></Link>
         <img src="https://www.converse.in/media/wysiwyg/april_slicespng-05_1.png?auto=webp&format=webp&quality=70" alt=""  />
         
         </div>
+        <div id="h8">
         <img src="https://www.converse.in/media/wysiwyg/april_slicespng-06_1.png?auto=webp&format=webp&quality=70" alt=""  />
-</div>
+</div></div>
 </div>
 
 <div id="h3">
-<div>
+<div id="h8">
     <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-03-1.jpg?auto=webp&format=webp&quality=70" alt="" />
 </div>
-<div>
+<div >
     <img src="https://www.converse.in/media/wysiwyg/May_22_homepage_copy-01_1.jpg?auto=webp&format=webp&quality=70" alt="" />
    <Link to="/Sale"> <button id="b5">Shop now</button></Link>
     <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-02-1.jpg?auto=webp&format=webp&quality=70" alt="" />
@@ -97,7 +98,7 @@ const Home=()=>{
     </div>
 </div>
 </div>
-<div id="h2">
+<div id="h9">
    <div id="d3">
     <div id="d1">
     <FaShippingFast />  </div>
