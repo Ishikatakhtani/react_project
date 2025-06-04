@@ -92,7 +92,7 @@
       "id": "12",
       "image": "https://www.converse.in/media/catalog/product/a/0/a07561c_03.jpg?optimize=medium&bg-color=255%2C255%2C255&fit=cover&height=800&width=640&auto=webp&format=pjpg",
       "description": "Chuck Taylor All Star Lift Platform",
-      "price": 4199 ,
+      "price": 4199,
       "discount": "₹5,999 30% Off",
       "category": "WOMEN'S HIGH TOP SHOE",
       "gender": "Female"
@@ -305,7 +305,7 @@
       "id": "38",
       "image": "https://www.converse.in/media/catalog/product/a/0/a08502c_c_08x1.jpg?optimize=medium&bg-color=255%2C255%2C255&fit=cover&height=800&width=640&auto=webp&format=pjpg",
       "description": "CONS AS-1 PRO Suede & Canvas",
-      "price":5849,
+      "price": 5849,
       "discount": "₹6,499 10% Off",
       "category": "UNISEX LOW TOP SHOE",
       "gender": "limited"
@@ -413,10 +413,20 @@
       "profilePic": "https://randomuser.me/api/portraits/men/1.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ishika Takhtani",
       "email": "ishikatakhtani113@gmail.com",
       "password": "Ishika@11",
+      "phone": "09755992640",
+      "address": "Idgha Hills",
+      "role": "customer",
+      "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ishika ",
+      "email": "Ishikatakhtani04@gmail.com",
+      "password": "Ishika@1",
       "phone": "09755992640",
       "address": "Idgha Hills",
       "role": "customer",
