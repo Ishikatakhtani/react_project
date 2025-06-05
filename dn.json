@@ -423,10 +423,20 @@
       "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Ishika ",
       "email": "Ishikatakhtani04@gmail.com",
       "password": "Ishika@1",
+      "phone": "09755992640",
+      "address": "Idgha Hills",
+      "role": "customer",
+      "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "krish",
+      "email": "krish@gmail.com",
+      "password": "Krish03",
       "phone": "09755992640",
       "address": "Idgha Hills",
       "role": "customer",
