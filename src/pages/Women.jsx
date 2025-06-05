@@ -21,14 +21,11 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   const response = await axios.get(api);
   //   setMydata(response.data)
   //  }
+ 
   const loadData = async () => {
-  const api = "https://cors-anywhere.herokuapp.com/https://www.jsonkeeper.com/b/P9ZY";
-
+  let api = "http://192.168.1.4:3000/shooes?gender=Female"; // replace with your actual IP and port
   const response = await axios.get(api);
-  const filtered = response.data.shooes.filter(
-    (item) => item.gender.toLowerCase() === "female"
-  );
-  setMydata(filtered);
+  setMydata(response.data);
 };
 
 
