@@ -28,7 +28,8 @@ const wishlist = useSelector((state) => state.wishlist.items);
 //   setMydata(response.data);
 // };
 const loadData = async () => {
-  const api = "https://f2c3-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
+   const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
+
   try {
     const response = await axios.get(api);
     console.log("Fetched Data:", response.data); // Debug line
