@@ -28,7 +28,7 @@ const wishlist = useSelector((state) => state.wishlist.items);
   const loadData = async () => {
     const category = "UNISEX HIGH TOP SHOE";
   // Read base URL from env variable
-  const baseUrl = process.env.REACT_APP_API_URL;
+  const baseUrl = import.meta.env.VITE_API_URL;
 
   // Construct full API URL with encoded category param
   const api = `${baseUrl}?category=${encodeURIComponent(category)}`;

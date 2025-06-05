@@ -28,13 +28,12 @@ const wishlist = useSelector((state) => state.wishlist.items);
 //   setMydata(response.data);
 // };
 const loadData = async () => {
-   const gender = "female";
-  // Read base URL from env variable
-  const baseUrl = process.env.REACT_APP_API_URL;
+    const gender = "female";
+  const baseUrl = import.meta.env.VITE_API_URL;  // <-- use import.meta.env here
 
-  // Construct full API URL with encoded category param
+  console.log("API URL:", baseUrl);  // to check if env var is loaded
+
   const api = `${baseUrl}?gender=${encodeURIComponent(gender)}`;
-
   try {
     const response = await axios.get(api, {
       headers: {
