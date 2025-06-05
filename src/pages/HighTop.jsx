@@ -24,7 +24,8 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   setMydata(response.data)
   //  }
   const loadData = async () => {
-  const api = "https://www.jsonkeeper.com/b/P9ZY";
+ const api = "https://cors-anywhere.herokuapp.com/https://www.jsonkeeper.com/b/P9ZY";
+
   const response = await axios.get(api);
   const filtered = response.data.shooes.filter(
     (item) => item.category === "UNISEX HIGH TOP SHOE"
