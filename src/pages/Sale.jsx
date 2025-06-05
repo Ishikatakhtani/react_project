@@ -13,11 +13,35 @@ const Sale=()=>{
   const navigate= useNavigate();
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
-   const loadData=async()=>{
-    let api="http://localhost:3000/shooes?gender=limited";
-    const response = await axios.get(api);
-    setMydata(response.data)
-   }
+  //  const loadData=async()=>{
+  //   let api="http://localhost:3000/shooes?gender=limited";
+  //   const response = await axios.get(api);
+  //   setMydata(response.data)
+  //  }
+
+  const loadData = async () => {
+  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=limited";
+
+  try {
+    const response = await axios.get(api, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    });
+    console.log("Status:", response.status);
+    console.log("Fetched Data:", response.data);
+
+    if (Array.isArray(response.data)) {
+      setMydata(response.data);
+    } else {
+      console.error("Expected array, got:", typeof response.data, response.data);
+      setMydata([]);
+    }
+  } catch (err) {
+    console.error("API call failed:", err.message);
+    setMydata([]);
+  }
+};
 
    
 useEffect(()=>{

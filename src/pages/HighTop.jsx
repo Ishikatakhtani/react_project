@@ -23,14 +23,30 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   const response = await axios.get(api);
   //   setMydata(response.data)
   //  }
-  const loadData = async () => {
- const api = "https://cors-anywhere.herokuapp.com/https://www.jsonkeeper.com/b/P9ZY";
+  
 
-  const response = await axios.get(api);
-  const filtered = response.data.shooes.filter(
-    (item) => item.category === "UNISEX HIGH TOP SHOE"
-  );
-  setMydata(filtered);
+  const loadData = async () => {
+  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?category=UNISEX HIGH TOP SHOE";
+
+  try {
+    const response = await axios.get(api, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    });
+    console.log("Status:", response.status);
+    console.log("Fetched Data:", response.data);
+
+    if (Array.isArray(response.data)) {
+      setMydata(response.data);
+    } else {
+      console.error("Expected array, got:", typeof response.data, response.data);
+      setMydata([]);
+    }
+  } catch (err) {
+    console.error("API call failed:", err.message);
+    setMydata([]);
+  }
 };
 
    const user = useSelector(state => state.auth?.user);

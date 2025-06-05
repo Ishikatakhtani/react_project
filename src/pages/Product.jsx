@@ -15,11 +15,36 @@ const Product = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // const loadData = async () => {
+  //   let api = "http://localhost:3000/shooes";
+  //   const response = await axios.get(api);
+  //   setProData(response.data);
+  // };
   const loadData = async () => {
-    let api = "http://localhost:3000/shooes";
-    const response = await axios.get(api);
+  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
+
+  try {
+    const response = await axios.get(api, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    });
+    console.log("Status:", response.status);
+    console.log("Fetched Data:", response.data);
+
+    if (Array.isArray(response.data)) {
+      setProData(response.data);
+    } else {
+      console.error("Expected array, got:", typeof response.data, response.data);
+      setProData(response.data);
+    }
+  } catch (err) {
+    console.error("API call failed:", err.message);
     setProData(response.data);
-  };
+  }
+};
+
+
 const user = useSelector(state => state.auth?.user);
   useEffect(() => {
     loadData();
