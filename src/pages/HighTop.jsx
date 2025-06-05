@@ -19,7 +19,7 @@ const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
 const wishlist = useSelector((state) => state.wishlist.items);
    const loadData=async()=>{
-    let api="http://localhost:3000/shooes?category=UNISEX HIGH TOP SHOE";
+    let api="https://www.jsonkeeper.com/b/P9ZY/category=UNISEX HIGH TOP SHOE";
     const response = await axios.get(api);
     setMydata(response.data)
    }
