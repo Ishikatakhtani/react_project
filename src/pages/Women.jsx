@@ -23,7 +23,7 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //  }
  
   const loadData = async () => {
-  let api = "http://192.168.1.4:3000/shooes?gender=Female"; // replace with your actual IP and port
+  const api = "https://f2c3-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
   const response = await axios.get(api);
   setMydata(response.data);
 };
