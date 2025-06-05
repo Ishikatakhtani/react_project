@@ -451,6 +451,16 @@
       "address": "Idgha Hills",
       "role": "customer",
       "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 6,
+      "name": "H free hi i",
+      "email": "i@gmail.com",
+      "password": "i-1T",
+      "phone": "46758743345",
+      "address": "Mv zenn Hn dky",
+      "role": "customer",
+      "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
     }
   ]
 }

@@ -5,55 +5,68 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 const Home=()=>{
+    const navigate = useNavigate();
     return(
         <>
         <div id="h1">
         <img src="https://www.converse.in/media/wysiwyg/Desktop.jpg?auto=webp&format=webp&quality=70" alt="" />
         </div>
         <Link to="/Limitededition"> <button id="b1"  >Shop Now</button> </Link>
-        <div id="h2">
+        <div id="h2"> <Link to="/Men">
             <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-16-1_1.jpg?auto=webp&format=webp&quality=70" alt="" height={"600px"}/>
             <img src="https://www.converse.in/media/wysiwyg/May_22_homepage_copy-15.jpg?auto=webp&format=webp&quality=70" alt=""  height={"600px"} />
             <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-17-1.jpg?auto=webp&format=webp&quality=70" alt=""  height={"600px"} />
+       </Link>
         </div>
 
         <div id="h3">
             <h2>Shop By Style</h2>
         </div>
         <div id="h4">
-        <div id="i1">
+        <div id="i1"> <Link to="/HighTop">
             <img src="https://www.converse.in/media/wysiwyg/Frame_37_1__1.png?auto=webp&format=webp&quality=70" alt=""  />
+          </Link>
           <p id="d1"><Link to="/HighTop" className="link" > High Top </Link></p></div>
-          <div id="i1">
+          <div id="i1"><Link to="/LowTop">
             <img src="https://www.converse.in/media/wysiwyg/Frame_38_4.png?auto=webp&format=webp&quality=70" alt="" />
-            <p id="d1"><Link to="/LowTop" className="link" >Low Top </Link></p></div>
-            <div id="i1">
+            </Link>
+            <p id="d1"><Link to="/LowTop" className="link" >Low Top </Link></p>
+            
+            </div>
+            <div id="i1"><Link to="/Platform">
             <img src="https://www.converse.in/media/wysiwyg/Frame_39_2.png?auto=webp&format=webp&quality=70" alt="" />
+            </Link>
             <p id="d1"><Link to="/Platform" className="link" >PLatform</Link></p></div>
             <div id="i1">
+                <Link to="/MidTop">
             <img src="https://www.converse.in/media/wysiwyg/Frame_40_3.png?auto=webp&format=webp&quality=70" alt="" />
+            </Link>
             <p id="d1"><Link to="/MidTop"className="link">Kids</Link></p></div>
         </div>
         
         <div id="h5">
-            
-<div id="h2">
+          <Link to="/Men">   
+<div id="h2"> 
     <img src="https://www.converse.in/media/wysiwyg/rick_owens_desktop-22-1.png?auto=webp&format=webp&quality=70" alt="" height={"700px"} />
     <div>
     <img src="https://www.converse.in/media/wysiwyg/rick_owens_desktop-21.png?auto=webp&format=webp&quality=70" alt="" height={"700px"} />
  <Link to="/Men">  <button  id="b2"> Shop now </button> </Link>  </div> 
     <img src="https://www.converse.in/media/wysiwyg/rick_owens_desktop-23-1.png?auto=webp&format=webp&quality=70" alt="" height={"700px"} />
 </div>
+</Link>
 </div>
-
+ <Link to="/Men"> 
 <div id="h2">
+   
 <div>
 <img src="https://www.converse.in/media/wysiwyg/May_22_homepage_copy-07-1.jpg?auto=webp&format=webp&quality=70" alt="" />
 <Link to="/Men"> <button  id="b3">Shop now</button> </Link></div>
 <img src="https://www.converse.in/media/wysiwyg/May_22_homepage_copy-08-1.jpg?auto=webp&format=webp&quality=70" alt="" />
-</div>
 
+</div> </Link> 
+ <Link to="/Women"> 
 <div id="h2">
 <div id="h3">
     <div >
@@ -66,7 +79,8 @@ const Home=()=>{
         <img src="https://www.converse.in/media/wysiwyg/april_slicespng-06_1.png?auto=webp&format=webp&quality=70" alt=""  />
 </div></div>
 </div>
-
+ </Link> 
+  <Link to="/Sale"> 
 <div id="h3">
 <div id="h8">
     <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-03-1.jpg?auto=webp&format=webp&quality=70" alt="" />
@@ -77,12 +91,17 @@ const Home=()=>{
     <img src="https://www.converse.in/media/wysiwyg/May_25_homepage_copy-02-1.jpg?auto=webp&format=webp&quality=70" alt="" />
 </div>
 </div>
+ </Link> 
+  <Link to="/Limitededition">
 <div id="h3">
+   
     <img src="https://www.converse.in/media/wysiwyg/app.jpg?auto=webp&format=webp&quality=70" alt=""  height={"600px"}/>
   <Link to="/Limitededition"><button id="b6">Shop now</button></Link>  
     <img src="https://www.converse.in/media/wysiwyg/acc.jpg?auto=webp&format=webp&quality=70" alt="" height={"600px"}/>
   <Link to="/Women"><button id="b7">Shop now</button></Link>  
 </div>
+</Link>
+<Link to="/Women">
 <div >
     <h2 id="p1"> <b>From our Community </b> </h2>
     <div id="h3">
@@ -98,16 +117,19 @@ const Home=()=>{
     </div>
 </div>
 </div>
+</Link>
 <div id="h9">
    <div id="d3">
     <div id="d1">
     <FaShippingFast />  </div>
   <p id="d2">  Fast, Free Shipping  </p> 
     <p>  
+        <Link to="/Signup" className="link">
 Sign up for Converse.in account and get free shipping on <br /> every order
 <br />
-<a href="" id="a">
-Learn More</a>
+
+Learn More
+</Link>
 </p>
      </div>
     <div id="d3">
