@@ -16,11 +16,20 @@ const Women=()=>{
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
 const wishlist = useSelector((state) => state.wishlist.items);
-   const loadData=async()=>{
-    let api="http://localhost:3000/shooes?gender=Female";
+  //  const loadData=async()=>{
+  //   let api="http://localhost:3000/shooes?gender=Female";
+  //   const response = await axios.get(api);
+  //   setMydata(response.data)
+  //  }
+  const loadData = async () => {
+    const api = "https://www.jsonkeeper.com/b/P9ZY";
     const response = await axios.get(api);
-    setMydata(response.data)
-   }
+    const filtered = response.data.filter(
+      (item) => item.gender === "female"
+    );
+    setMydata(filtered);
+  };
+
 const user = useSelector(state => state.auth?.user);
 useEffect(()=>{
     loadData()
