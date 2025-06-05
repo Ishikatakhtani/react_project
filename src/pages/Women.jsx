@@ -33,7 +33,7 @@ const loadData = async () => {
   const baseUrl = process.env.REACT_APP_API_URL;
 
   // Construct full API URL with encoded category param
-  const api = `${baseUrl}?category=${encodeURIComponent(gender)}`;
+  const api = `${baseUrl}?gender=${encodeURIComponent(gender)}`;
 
   try {
     const response = await axios.get(api, {
