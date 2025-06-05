@@ -26,7 +26,7 @@ const wishlist = useSelector((state) => state.wishlist.items);
   const loadData = async () => {
   const api = "https://www.jsonkeeper.com/b/P9ZY";
   const response = await axios.get(api);
-  const filtered = response.data.filter(
+  const filtered = response.data.shooes.filter(
     (item) => item.category === "UNISEX HIGH TOP SHOE"
   );
   setMydata(filtered);

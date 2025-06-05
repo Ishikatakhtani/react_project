@@ -22,13 +22,14 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   setMydata(response.data)
   //  }
   const loadData = async () => {
-    const api = "https://www.jsonkeeper.com/b/P9ZY";
-    const response = await axios.get(api);
-    const filtered = response.data.filter(
-      (item) => item.gender === "female"
-    );
-    setMydata(filtered);
-  };
+  const api = "https://www.jsonkeeper.com/b/P9ZY";
+  const response = await axios.get(api);
+  const filtered = response.data.shooes.filter(
+    (item) => item.gender.toLowerCase() === "female"
+  );
+  setMydata(filtered);
+};
+
 
 const user = useSelector(state => state.auth?.user);
 useEffect(()=>{
