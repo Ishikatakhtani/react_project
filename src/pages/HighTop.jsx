@@ -18,11 +18,20 @@ const HighTop=()=>{
 const [data, setMydata]= useState([]);
 const dispatch = useDispatch();
 const wishlist = useSelector((state) => state.wishlist.items);
-   const loadData=async()=>{
-    let api="https://www.jsonkeeper.com/b/P9ZY/category=UNISEX HIGH TOP SHOE";
-    const response = await axios.get(api);
-    setMydata(response.data)
-   }
+  //  const loadData=async()=>{
+  //   let api="https://www.jsonkeeper.com/b/P9ZY/category=UNISEX HIGH TOP SHOE";
+  //   const response = await axios.get(api);
+  //   setMydata(response.data)
+  //  }
+  const loadData = async () => {
+  const api = "https://www.jsonkeeper.com/b/P9ZY";
+  const response = await axios.get(api);
+  const filtered = response.data.filter(
+    (item) => item.category === "UNISEX HIGH TOP SHOE"
+  );
+  setMydata(filtered);
+};
+
    const user = useSelector(state => state.auth?.user);
 
 useEffect(()=>{
