@@ -22,34 +22,35 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   setMydata(response.data)
   //  }
  
-//   const loadData = async () => {
-//   const api = "https://f2c3-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
-//   const response = await axios.get(api);
-//   setMydata(response.data);
-// };
-const loadData = async () => {
+  const loadData = async () => {
   const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
 
-  try {
-    const response = await axios.get(api, {
-      headers: {
-        "ngrok-skip-browser-warning": "true"
-      }
-    });
-    console.log("Status:", response.status);
-    console.log("Fetched Data:", response.data);
+  const response = await axios.get(api);
+  setMydata(response.data);
+// };
+// const loadData = async () => {
+//   const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
 
-    if (Array.isArray(response.data)) {
-      setMydata(response.data);
-    } else {
-      console.error("Expected array, got:", typeof response.data, response.data);
-      setMydata([]);
-    }
-  } catch (err) {
-    console.error("API call failed:", err.message);
-    setMydata([]);
-  }
-};
+//   try {
+//     const response = await axios.get(api, {
+//       headers: {
+//         "ngrok-skip-browser-warning": "true"
+//       }
+//     });
+//     console.log("Status:", response.status);
+//     console.log("Fetched Data:", response.data);
+
+//     if (Array.isArray(response.data)) {
+//       setMydata(response.data);
+//     } else {
+//       console.error("Expected array, got:", typeof response.data, response.data);
+//       setMydata([]);
+//     }
+//   } catch (err) {
+//     console.error("API call failed:", err.message);
+//     setMydata([]);
+//   }
+// };
 
 
 
