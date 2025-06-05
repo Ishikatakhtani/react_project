@@ -28,23 +28,29 @@ const wishlist = useSelector((state) => state.wishlist.items);
 //   setMydata(response.data);
 // };
 const loadData = async () => {
-   const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=Female";
+  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shoes?gender=Female";
 
   try {
-    const response = await axios.get(api);
-    console.log("Fetched Data:", response.data); // Debug line
+    const response = await axios.get(api, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    });
+    console.log("Status:", response.status);
+    console.log("Fetched Data:", response.data);
 
     if (Array.isArray(response.data)) {
       setMydata(response.data);
     } else {
       console.error("Expected array, got:", typeof response.data, response.data);
-      setMydata([]); // Prevent breaking .map()
+      setMydata([]);
     }
   } catch (err) {
     console.error("API call failed:", err.message);
     setMydata([]);
   }
 };
+
 
 
 
