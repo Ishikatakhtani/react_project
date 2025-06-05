@@ -21,7 +21,12 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/user"); // Fetch users from db.json
+      // const response = await fetch("http://localhost:3000/user");
+const response = await fetch(import.meta.env.VITE_API_URL_USER,{
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }});
+
       const users = await response.json();
 
       const user = users.find(
