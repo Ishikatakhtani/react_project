@@ -14,7 +14,11 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/user");
+      // const response = await fetch("http://localhost:3000/user");
+      const response = await fetch(import.meta.env.VITE_API_URL_USER,{
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }});
       const users = await response.json();
 
       const userExists = users.find((u) => u.email === email);
