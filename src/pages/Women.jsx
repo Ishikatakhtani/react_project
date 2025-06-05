@@ -28,7 +28,7 @@ const wishlist = useSelector((state) => state.wishlist.items);
 //   setMydata(response.data);
 // };
 const loadData = async () => {
-    const gender = "female";
+    const gender = "Female";
   const baseUrl = import.meta.env.VITE_API_URL;  // <-- use import.meta.env here
 
   console.log("API URL:", baseUrl);  // to check if env var is loaded
