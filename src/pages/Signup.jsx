@@ -39,13 +39,22 @@ const Signup = () => {
         profilePic: "https://randomuser.me/api/portraits/lego/1.jpg", // Default profile pic
       };
 
-      await fetch("http://localhost:3000/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      });
+      // await fetch("http://localhost:3000/user", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(newUser),
+      // });
+
+      await fetch(import.meta.env.VITE_API_URL_USER, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "ngrok-skip-browser-warning": "true",
+  },
+  body: JSON.stringify(newUser),
+});
 
       navigate("/login"); // Redirect to login page after signup
     } catch (err) {

@@ -441,6 +441,16 @@
       "address": "Idgha Hills",
       "role": "customer",
       "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Is",
+      "email": "Ish@gmail.com",
+      "password": "Ishika@11",
+      "phone": "09755992640",
+      "address": "Idgha Hills",
+      "role": "customer",
+      "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
     }
   ]
 }
