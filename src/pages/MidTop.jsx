@@ -23,7 +23,12 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //   setMydata(response.data)
   //  }
   const loadData = async () => {
-  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?category=UNISEX MID TOP SHOE";
+  const category = "UNISEX MID TOP SHOE";
+  // Read base URL from env variable
+  const baseUrl = import.meta.env.VITE_API_URL;
+
+  // Construct full API URL with encoded category param
+  const api = `${baseUrl}?category=${encodeURIComponent(category)}`;
 
   try {
     const response = await axios.get(api, {

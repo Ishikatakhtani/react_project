@@ -23,8 +23,12 @@ const wishlist = useSelector((state) => state.wishlist.items);
   //  }
   
   const loadData = async () => {
-  const api = "https://bbf4-2401-4900-8820-48a4-1006-76b0-207a-9d65.ngrok-free.app/shooes?gender=limited";
+  const gender = "limited";
+  const baseUrl = import.meta.env.VITE_API_URL;  // <-- use import.meta.env here
 
+  console.log("API URL:", baseUrl);  // to check if env var is loaded
+
+  const api = `${baseUrl}?gender=${encodeURIComponent(gender)}`;
   try {
     const response = await axios.get(api, {
       headers: {
