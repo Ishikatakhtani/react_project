@@ -179,3 +179,9 @@ Keep up with the latest Converse news on our social channels.
 }
 export default Home
 
+
+
+//USE THIS WHILE HOSTING FOR VERCEL 
+// cd C:\Users\pc\Downloads\ngrok-v3-stable-windows-amd64.\ngrok.exe http 3000
+// cd C:\Users\pc\Downloads\ngrok-v3-stable-windows-amd64
+//C:\Users\pc\Downloads\ngrok-v3-stable-windows-amd64\ngrok.exe http 3000
