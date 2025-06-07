@@ -43,7 +43,7 @@ const dispatch = useDispatch();
       setMydata([]);
     }
   } catch (err) {
-    console.error("API call failed:", err.message);
+    console.error("API calll failed:", err.message);
     setMydata([]);
   }
 };
